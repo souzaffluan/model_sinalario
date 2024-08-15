@@ -9,22 +9,22 @@ module.exports=(sequelize,DataTypes)=>{
     }
     Details.init({
         id:DataTypes.INTEGER,
-        name:DataTypes.TEXT,
-        slug:DataTypes.TEXT,
-        description:DataTypes.TEXT,
-        video_link:DataTypes.TEXT,
-        image_link:DataTypes.TEXT,
-        image_alt:DataTypes.TEXT,
-        detail_type_id:DataTypes.INTEGER
+        name:DataTypes.STRING,
+        slug:DataTypes.STRING,
+        description:DataTypes.STRING,
+        video_link:DataTypes.STRING,
+        image_link:DataTypes.STRING,
+        image_alt:DataTypes.STRING,
+        detail_type_id:DataTypes.INTEGER,
+        regionality_id:DataTypes.INTEGER
 
     },
     {
         sequelize,
         modelName:'Detail',
-        tableName:'Details', // aaaaaaaaaaaaaaaaaaa vai dar merda //
+        tableName:'Details', 
         timestamps: false
     })
     
     return Details;
-
 }
