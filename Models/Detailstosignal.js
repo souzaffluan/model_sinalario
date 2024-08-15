@@ -1,10 +1,8 @@
-
 const {Model}=require('sequelize')
 module.exports=(sequelize,DataTypes)=>{
-    class Details extends Model{
+    class Detailstosignal extends Model{
         static association (models){
-            this.belongsTo(models.Signal,{as:'signals', foreignKey:'signal_id'})
-            this.hasOne(models.Detailtype,{as:'detailtype', foreignKey:'detail_type__id'})
+            
         }
     }
     Details.init({
