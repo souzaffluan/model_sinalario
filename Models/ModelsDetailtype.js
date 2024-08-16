@@ -2,7 +2,7 @@ const {Model}=require('sequelize')
 module.exports=(sequelize,DataTypes)=>{
     class Detailtypes extends Model{
         static association (models){
-            
+            this.hasOne(models.Detail,{as:'details', foreignKey:'detail_type__id'})
         }
     }
     Detailtypes.init({

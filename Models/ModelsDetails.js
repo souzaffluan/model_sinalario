@@ -5,6 +5,7 @@ module.exports=(sequelize,DataTypes)=>{
         static association (models){
             this.belongsTo(models.Signal,{as:'signals', foreignKey:'signal_id'})
             this.hasOne(models.Detailtype,{as:'detailtype', foreignKey:'detail_type__id'})
+            this.belongsTo(models.Regionality,{as:'regionality', foreignKey:'regionality_id'})
         }
     }
     Details.init({

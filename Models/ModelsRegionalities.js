@@ -1,11 +1,11 @@
 const {Model}=require('sequelize')
 module.exports=(sequelize,DataTypes)=>{
-    class Details extends Model{
+    class Regionalitys extends Model{
         static association (models){
-            
+            this.belongsTo(models.Detail,{as:'details', foreignKey:'detail_id'})
         }
     }
-    Details.init({
+    Regionalitys.init({
         id:DataTypes.INTEGER,
         name:DataTypes.STRING,
         slug:DataTypes.STRING,
@@ -15,8 +15,8 @@ module.exports=(sequelize,DataTypes)=>{
     },
     {
         sequelize,
-        modelName:'Detail',
-        tableName:'Details', 
+        modelName:'Regionality',
+        tableName:'Regionalitys', 
         timestamps: false
     })
     
