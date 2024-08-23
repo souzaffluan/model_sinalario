@@ -2,21 +2,21 @@ const {Model}=require('sequelize')
 module.exports=(sequelize,DataTypes)=>{
     class Detailtypes extends Model{
         static association (models){
-            this.hasOne(models.Detail,{as:'details', foreignKey:'detail_type__id'})
+            this.belongsToMany(models.Detail,{as:'details', foreignKey:'detail_type_id'})
         }
     }
     Detailtypes.init({
         id:DataTypes.INTEGER,
         name:DataTypes.STRING,
-        slug:DataTypes.STRING,
+        slug:DataTypes.STRING
 
     },
     {
         sequelize,
         modelName:'Detailtype',
-        tableName:'Detailtypes', 
+        tableName:'detailtypes', 
         timestamps: false
     })
     
-    return Details;
+    return Detailtypes;
 }

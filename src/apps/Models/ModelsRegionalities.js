@@ -16,9 +16,9 @@ module.exports=(sequelize,DataTypes)=>{
     {
         sequelize,
         modelName:'Regionality',
-        tableName:'Regionalitys', 
+        tableName:'regionalitys', 
         timestamps: false
     })
     
-    return Details;
+    return Regionalitys;
 }

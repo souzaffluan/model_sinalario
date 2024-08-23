@@ -3,9 +3,9 @@ const {Model}=require('sequelize')
 module.exports=(sequelize,DataTypes)=>{
     class Details extends Model{
         static association (models){
-            this.belongsTo(models.Signal,{as:'signals', foreignKey:'signal_id'})
-            this.hasOne(models.Detailtype,{as:'detailtype', foreignKey:'detail_type__id'})
-            this.belongsTo(models.Regionality,{as:'regionality', foreignKey:'regionality_id'})
+            this.belongsToMany(models.Detail,{as:'details', through:'DetailSignal'})
+            this.hasOne(models.Detailtype,{as:'detailtype', foreignKey:'detail_type_id'})
+            this.hasMany(models.Regionality,{as:'regionality', foreignKey:'regionality_id'})
         }
     }
     Details.init({
@@ -23,7 +23,7 @@ module.exports=(sequelize,DataTypes)=>{
     {
         sequelize,
         modelName:'Detail',
-        tableName:'Details', 
+        tableName:'details', 
         timestamps: false
     })
     
